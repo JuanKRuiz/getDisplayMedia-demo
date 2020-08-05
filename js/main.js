@@ -20,8 +20,7 @@ var soundMeter = null;
 var micNumber = 0;
 
 function onShareScreen() {
-  //if (!navigator.mediaDevices.getDisplayMedia) {
-  if (!navigator.getDisplayMedia) {
+  if (!navigator.mediaDevices.getDisplayMedia) {
     alert(
       "navigator.mediaDevices.getDisplayMedia not supported on your browser, use the latest version of Chrome"
     );
@@ -31,7 +30,6 @@ function onShareScreen() {
         "MediaRecorder not supported on your browser, use the latest version of Firefox or Chrome"
       );
     } else {
-      //navigator.mediaDevices.getDisplayMedia(constraints).then(function(screenStream) {
       navigator.getDisplayMedia(constraints).then(function(screenStream) {
           //check for microphone
           navigator.mediaDevices.enumerateDevices().then(function(devices) {
