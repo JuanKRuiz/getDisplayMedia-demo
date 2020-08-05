@@ -44,6 +44,24 @@ if (navigator.mediaDevices.getUserMedia === undefined) {
     });
   }
 }
+	    
+	    navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+.then(function(stream) {
+  var video = document.querySelector('video');
+  // Older browsers may not have srcObject
+  if ("srcObject" in video) {
+    video.srcObject = stream;
+  } else {
+    // Avoid using this in new browsers, as it is going away.
+    video.src = window.URL.createObjectURL(stream);
+  }
+  video.onloadedmetadata = function(e) {
+    video.play();
+  };
+})
+.catch(function(err) {
+  console.log(err.name + ": " + err.message);
+});
     </script>
     <div>
       <h1>Screen Recording With System Sounds Demo</h1>
@@ -78,5 +96,6 @@ if (navigator.mediaDevices.getUserMedia === undefined) {
  <script>
 	 microsoftTeams.appInitialization.notifySuccess();
  </script>
+	<video></video>
 </body>
 </html>
