@@ -47,7 +47,7 @@ if (navigator.mediaDevices.getUserMedia === undefined) {
 
 try {
   var videoElement = document.querySelector('video');
-  let mediaStream = await getUserMedia({video:true});
+  let mediaStream = getUserMedia({video:true});
   videoElement.srcObject = mediaStream;
 } catch (e) {
   console.log('Unable to acquire screen capture: ' + e);
