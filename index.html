@@ -10,10 +10,15 @@
   <!-- Latest compiled and minified Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css" />
+	<!-- Microsoft Teams JavaScript API (via CDN) -->
+<script src="https://statics.teams.cdn.office.net/sdk/v1.7.0/js/MicrosoftTeams.min.js" integrity="sha384-00JbifySIlPvW32u9rSurgu8PujfL6XFdV9iNn4ZWyurJJ33MFvpwPqmCHDq9ADv" crossorigin="anonymous"></script>
+ 
 </head>
 
 <body>
-  
+      <script>
+    microsoftTeams.initialize();
+    </script>
     <div>
       <h1>Screen Recording With System Sounds Demo</h1>
       <p><small>Made by the <a href="https://addpipe.com">Pipe Recording Platform</a></small></p>
