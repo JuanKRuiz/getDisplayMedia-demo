@@ -30,7 +30,7 @@ function onShareScreen() {
         "MediaRecorder not supported on your browser, use the latest version of Firefox or Chrome"
       );
     } else {
-      navigator.getDisplayMedia(constraints).then(function(screenStream) {
+      navigator.mediaDevices.getDisplayMedia(constraints).then(function(screenStream) {
           //check for microphone
           navigator.mediaDevices.enumerateDevices().then(function(devices) {
               devices.forEach(function(device) {
